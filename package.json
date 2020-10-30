@@ -1,0 +1,16 @@
+{
+  "name": "lexer-nodered-node-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node-generator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "node-red" : {
+    "nodes": {
+        "node-generator": "node-generator.js"
+    }
+}
+}

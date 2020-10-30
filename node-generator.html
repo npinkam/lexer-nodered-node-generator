@@ -1,0 +1,58 @@
+<style>
+    textarea{
+    resize: none;
+    }
+</style>
+
+<script type="text/javascript">
+    RED.nodes.registerType('node-generator',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            desc: {value:""},
+            properties: {value:""},
+            codeBeforeReceivePayload: {value:""},
+            codeWhenReceivePayload: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return "node-generator";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="node-generator">
+    <div class="form-row">
+        <label for="node-input-name">Name</label><input type="text" id="node-input-name" placeholder="Name"></br>
+        <label for="node-input-desc">Description</label><input type="text" id="node-input-desc" placeholder="Description"></br>
+        <label for="node-input-properties">Properties</label><input type="text" id="node-input-properties" placeholder="p1, p2, p3, ..."></br>
+    </div>
+        <p>module.exports = function(RED) {</br>
+        &nbsp;&nbsp;function {nodeName}Node(config) {</br>
+        &nbsp;&nbsp;&nbsp;&nbsp;RED.nodes.createNode(this,config);</br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var node = this;</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//properties field</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.</br>
+        </p>
+    <div class="form-row">
+        <label for="node-input-codeBeforeReceivePayload">Code before receive a payload</label>
+        <textarea type="text" id="node-input-codeBeforeReceivePayload" rows="5" cols="80" style="width: 70%;"></textarea></br>
+    </div>
+    <p>node.on('input', function(msg) {</br></p>
+    <div class="form-row">
+        <label for="node-input-codeWhenReceivePayload">Code when receive a payload</label>
+        <textarea type="text" id="node-input-codeWhenReceivePayload" rows="10" cols="80" style="width: 70%;"></textarea></br>
+    </div>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.send(msg);</br>
+        &nbsp;&nbsp;&nbsp;&nbsp;});</br>
+        &nbsp;&nbsp;}</br>
+        &nbsp;&nbsp;RED.nodes.registerType("{node-name}",{nodeName}Node);</br>
+        &nbsp;&nbsp;</p>
+</script>
+
+<script type="text/html" data-help-name="node-generator">
+    <p>Set a JSON for node creation.</p>
+</script>
