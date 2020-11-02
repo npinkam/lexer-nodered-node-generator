@@ -17,7 +17,7 @@ module.exports = function(RED) {
             msg.filename = '/data/node-creation/lexer-nodered-' + this.name +'/';
             msg.payload.desc = this.desc;
             if(this.require)
-                msg.payload.require = this.require.split(',');
+                msg.payload.require = JSON.parse(this.require);
             else
                 msg.payload.require = {};
             if(this.properties)
