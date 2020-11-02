@@ -6,7 +6,7 @@ module.exports = function(RED) {
         //properties field
         this.name = config.name;
         this.desc = config.desc;
-        this.desc = config.require;
+        this.require = config.require;
         this.properties = config.properties;
         this.codeBeforeReceivePayload = config.codeBeforeReceivePayload;
         this.codeWhenReceivePayload = config.codeWhenReceivePayload;
