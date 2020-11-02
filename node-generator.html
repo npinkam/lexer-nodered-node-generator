@@ -11,6 +11,7 @@
         defaults: {
             name: {value:""},
             desc: {value:""},
+            require: {value:""},
             properties: {value:""},
             codeBeforeReceivePayload: {value:""},
             codeWhenReceivePayload: {value:""}
@@ -28,6 +29,7 @@
     <div class="form-row">
         <label for="node-input-name">Name</label><input type="text" id="node-input-name" placeholder="Name"></br>
         <label for="node-input-desc">Description</label><input type="text" id="node-input-desc" placeholder="Description"></br>
+        <label for="node-input-require">Required Modules</label><input type="text" id="node-input-require" placeholder="m1, m2, m3, ..."></br>
         <label for="node-input-properties">Properties</label><input type="text" id="node-input-properties" placeholder="p1, p2, p3, ..."></br>
     </div>
         <p>module.exports = function(RED) {</br>

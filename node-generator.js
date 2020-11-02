@@ -6,6 +6,7 @@ module.exports = function(RED) {
         //properties field
         this.name = config.name;
         this.desc = config.desc;
+        this.desc = config.require;
         this.properties = config.properties;
         this.codeBeforeReceivePayload = config.codeBeforeReceivePayload;
         this.codeWhenReceivePayload = config.codeWhenReceivePayload;
@@ -15,6 +16,10 @@ module.exports = function(RED) {
             msg.payload.name = this.name;
             msg.filename = '/data/node-creation/lexer-nodered-' + this.name +'/';
             msg.payload.desc = this.desc;
+            if(this.require)
+                msg.payload.require = this.require.split(',');
+            else
+                msg.payload.require = {};
             if(this.properties)
                 msg.payload.properties = this.properties.split(',');
             else
