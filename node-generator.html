@@ -11,7 +11,7 @@
         defaults: {
             name: {value:""},
             desc: {value:""},
-            require: {value:""},
+            dependencies: {value:""},
             properties: {value:""},
             codeBeforeReceivePayload: {value:""},
             codeWhenReceivePayload: {value:""}
@@ -23,7 +23,7 @@
             return "node-generator";
         },
         oneditprepare: function() {
-            $("#node-input-require").typedInput({
+            $("#node-input-dependencies").typedInput({
                 type:"json",
                 types:["json"]
             })
@@ -35,7 +35,7 @@
     <div class="form-row">
         <label for="node-input-name">Name</label><input type="text" id="node-input-name" placeholder="Name"></br>
         <label for="node-input-desc">Description</label><input type="text" id="node-input-desc" placeholder="Description"></br>
-        <label for="node-input-require">Required</label><input type="text" id="node-input-require" placeholder="{n1:m1, n2:m2, ...}"></br>
+        <label for="node-input-dependencies">Dependencies</label><input type="text" id="node-input-dependencies" placeholder="{n1:m1, n2:m2, ...}"></br>
         <label for="node-input-properties">Properties</label><input type="text" id="node-input-properties" placeholder="p1, p2, p3, ..."></br>
     </div>
         <p>module.exports = function(RED) {</br>
