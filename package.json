@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "node-generator.js",
-  "dependencies" : {
-    "lexer-nodered-node-generator" : "npinkam/lexer-nodered-node-generator"
- },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
